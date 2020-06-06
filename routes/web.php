@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UsersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UsersController@index');
+Route::get('/{id}' ,'UsersController@getById');
+Route::delete('/delete/{id}', 'UsersController@delete');
